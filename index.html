@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI', sans-serif;
+    }
+
+    body{
+        background: linear-gradient(135deg,#4facfe,#00f2fe);
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
+
+    .container{
+        background:#fff;
+        width:100%;
+        max-width:500px;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2{
+        text-align:center;
+        margin-bottom:20px;
+        color:#333;
+    }
+
+    .form-group{
+        margin-bottom:15px;
+    }
+
+    label{
+        display:block;
+        margin-bottom:5px;
+        font-weight:bold;
+        color:#555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea{
+        width:100%;
+        padding:10px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:16px;
+    }
+
+    textarea{
+        resize:vertical;
+    }
+
+    .radio-group,
+    .checkbox-group{
+        display:flex;
+        gap:15px;
+        margin-top:5px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:8px;
+        background:#4facfe;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#2d8cf0;
+    }
+
+    .note{
+        font-size:13px;
+        color:#888;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>สมัครสมาชิก</h2>
+
+    <form action="#" method="post">
+
+        <!-- Text Box -->
+        <div class="form-group">
+            <label>ชื่อ-นามสกุล</label>
+            <input type="text"
+                   name="fullname"
+                   placeholder="กรอกชื่อ-นามสกุล"
+                   required
+                   minlength="3">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   placeholder="example@email.com"
+                   required>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password"
+                   name="password"
+                   placeholder="อย่างน้อย 8 ตัวอักษร"
+                   required
+                   minlength="8">
+        </div>
+
+        <!-- Radio Button -->
+        <div class="form-group">
+            <label>เพศ</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" required> ชาย</label>
+                <label><input type="radio" name="gender" value="female"> หญิง</label>
+                <label><input type="radio" name="gender" value="other"> อื่นๆ</label>
+            </div>
+        </div>
+
+        <!-- Select -->
+        <div class="form-group">
+            <label>จังหวัด</label>
+            <select name="province" required>
+                <option value="">-- เลือกจังหวัด --</option>
+                <option>กรุงเทพมหานคร</option>
+                <option>เชียงใหม่</option>
+                <option>ขอนแก่น</option>
+                <option>ศรีสะเกษ</option>
+                <option>ภูเก็ต</option>
+            </select>
+        </div>
+
+        <!-- Textarea -->
+        <div class="form-group">
+            <label>แนะนำตัว</label>
+            <textarea name="about"
+                      rows="4"
+                      placeholder="เขียนข้อมูลเกี่ยวกับตัวคุณ"
+                      required></textarea>
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-group">
+            <label>ความสนใจ</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="interest[]" value="กีฬา"> กีฬา</label>
+                <label><input type="checkbox" name="interest[]" value="ดนตรี"> ดนตรี</label>
+                <label><input type="checkbox" name="interest[]" value="ท่องเที่ยว"> ท่องเที่ยว</label>
+            </div>
+        </div>
+
+        <!-- Validation -->
+        <div class="form-group">
+            <label>
+                <input type="checkbox" required>
+                ยอมรับเงื่อนไขการใช้งาน
+            </label>
+            <div class="note">
+                ต้องยอมรับเงื่อนไขก่อนส่งข้อมูล
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit">สมัครสมาชิก</button>
+
+    </form>
+</div>
+
+</body>
+</html>
